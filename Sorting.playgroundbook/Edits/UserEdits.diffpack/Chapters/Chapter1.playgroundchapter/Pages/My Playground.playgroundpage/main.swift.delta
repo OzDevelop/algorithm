@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>var list: [Int] = [7, 3, 5, 1, 2]
+
+//bubble sort
+func bubbleSort(_ :[Int]) -&gt; [Int]{
+    for i in 0..&lt;list.count {
+    //    print(i)
+    //    print(list[i])
+        for j in 1..&lt;list.count{
+            if list[j-1] &gt; list [j] {
+                    var temp = list [j-1]
+                    list[j-1] = list[j]
+                    list[j] = temp
+    //            print(list)
+                }    
+
+        }
+    //    print("----")
+    //    print(list)
+    }
+return list    
+}
+
+
+
+print("default list : \(list)")
+print("bubble sort : \(bubbleSort(list))")
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 559}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
