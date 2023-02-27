@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>public struct Queue&lt;T&gt; {
+  fileprivate var array = [T]()
+  
+  public var isEmpty: Bool {
+    return array.isEmpty
+  }
+  
+  public var count: Int {
+    return array.count
+  }
+  
+  public mutating func enquque(_ element: T) {
+    array.append(element)
+  }
+  
+  public mutating func dequeue() -&gt; T? {
+    if isEmpty {
+      return nil
+    } else {
+      return array.removeFirst()
+    }
+  }
+  
+  public var front: T? {
+    return array.first
+  }
+}
+
+//graph
+let graph = [
+    [],
+    [2,3],
+    [1,4,5],
+    [1,6,7],
+    [2],
+    [2],
+    [3],
+    [3,8],
+    [7]
+]
+
+var visited = Array.init(repeating: false, count: graph.count)
+
+//print(visited)
+//print(graph)
+
+//DFS
+func dfs(start: Int){
+    visited[start] = true
+    //print(visited)
+    print(start,terminator: " ")
+    
+    for i in graph[start] {
+        //print(graph[start])
+        //print(i)
+        if !visited[i] {
+            dfs(start: i)
+        }
+    }
+}
+
+//dfs(start: 1)
+//1 2 4 5 3 6 7 8
+
+var queue = Queue&lt;Int&gt;()
+//BFS
+func bfs(start: Int){
+    queue.enquque(start)
+    visited[start] = true
+    
+    while !queue.isEmpty {
+        guard let elem = queue.dequeue() else { return }
+        print(elem, terminator:" ")
+        
+        for i in graph[elem] {
+            if !visited[i] {
+                queue.enquque(i)
+                visited[i] = true
+            }
+        }
+    }
+}
+bfs(start: 1)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1365}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
